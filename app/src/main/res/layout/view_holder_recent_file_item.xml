@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="recentFileItem" type="com.mustafacanyucel.textcrypt.model.RecentFileItem" />
+        <variable
+            name="clickListenerStar"
+            type="com.mustafacanyucel.textcrypt.clickListener.RecentFileItemStar" />
+
+        <variable name="clickListenerDelete" type="com.mustafacanyucel.textcrypt.clickListener.RecentFileItemDelete" />
+        <variable
+            name="clickListener"
+            type="com.mustafacanyucel.textcrypt.clickListener.RecentFileItemClickListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+         android:layout_margin="4dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="@{() -> clickListener.onClick(recentFileItem)}"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@{recentFileItem.name}"
+                android:textSize="18sp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_star_24"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/star"
+                android:isStarred="@{recentFileItem.isStarred}"
+
+                android:onClick="@{() -> clickListenerStar.onClick(recentFileItem)}" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_delete_24"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/delete"
+                android:onClick="@{() -> clickListenerDelete.onClick(recentFileItem)}" />
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

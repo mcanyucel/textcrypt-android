@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TextCrypt</string>
+    <string name="title_activity_home">TextCrypt</string>
+    <string name="recent_files">Recent Files</string>
+    <string name="open_a_file">Open Existing File</string>
+    <string name="create_a_file">Create New File</string>
+    <string name="file_contents">File contents…</string>
+    <string name="new_file">New File</string>
+    <string name="save">Save</string>
+    <string name="error_decrypting">Error! Invalid password or corrupted file.</string>
+    <string name="error_reading_file">Error reading file!</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_new_password">Enter New Password</string>
+    <string name="password_too_short">Password is shorter than 6 characters!</string>
+    <string name="star">Star</string>
+    <string name="delete">Delete</string>
+</resources>
